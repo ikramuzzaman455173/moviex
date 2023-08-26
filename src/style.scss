@@ -1,3 +1,4 @@
+@import "../src/mixins.scss";
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -11,6 +12,7 @@
   -webkit-text-size-adjust: 100%;
 
   --black: #04152d;
+  --white: #ffffff;
   --black2: #041226;
   --black3: #020c1b;
   --black-lighter: #1c4b91;
@@ -30,35 +32,156 @@ body {
   background-color: var(--black);
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
+// ::-webkit-scrollbar {
+//   display:;
+// }
 
 .skeleton {
   position: relative;
   overflow: hidden;
   background-color: #0a2955;
   &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateX(-100%);
-      background-image: linear-gradient(
-          90deg,
-          rgba(#193763, 0) 0,
-          rgba(#193763, 0.2) 20%,
-          rgba(#193763, 0.5) 60%,
-          rgba(#193763, 0)
-      );
-      animation: shimmer 2s infinite;
-      content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#193763, 0) 0,
+      rgba(#193763, 0.2) 20%,
+      rgba(#193763, 0.5) 60%,
+      rgba(#193763, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: "";
   }
 
   @keyframes shimmer {
-      100% {
-          transform: translateX(100%);
-      }
+    100% {
+      transform: translateX(100%);
+    }
   }
 }
+
+/***** ContentWrapper Style scetion *****/
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/***** End ContentWrapper Style scetion *****/
+
+/***** HeroBanner Section Styles *****/
+// heroBanner
+// backdrop-img
+// opacity-layer
+// heroBannerContent
+// title
+// subTitle
+// searchInput
+.heroBanner {
+  width: 100%;
+  height: 450px;
+  background: var(black);
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  position: relative;
+  @include md {
+    height: 700px;
+  }
+  .backdrop-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+    .lazy-load-image-background {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .opacity-layer {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .heroBannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    .title {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      @include md {
+        margin-bottom: 0;
+        font-size: 90px;
+      }
+    }
+    .subTitle{
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      @include md{
+        font-size: 24px;
+      }
+    }
+    .searchInput{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      input{
+        width:calc(100% - 100px);
+        height:50px;
+        background:var(--white);
+        outline: 0;
+        border: 0;
+        border-radius:30px 0 0 30px;
+        padding: 0 15px;
+        font-size:14px;
+        @include md{
+        width:calc(100% - 150px);
+        height: 60px;
+        font-size: 20px;
+        padding: 0 30px;
+        }
+      }
+      button{
+        width:100px;
+        height: 50px;
+        background: var(--gradient);
+        color:var(--white);
+        outline:0;
+        border:0;
+        border-radius:0 30px 30px 0;
+        font-size:16px;
+        cursor: pointer;
+        @include md{
+          width:150px;
+          height:60px;
+        }
+      }
+    }
+  }
+}
+/***** End HeroBanner Section Styles *****/
