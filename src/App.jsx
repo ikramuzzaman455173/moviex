@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/expore/:mediaType" element={<Explore />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </>
   )
