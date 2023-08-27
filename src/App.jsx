@@ -33,7 +33,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        {/* <Header/> */}
+        <Header/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/:mediaType/:id" element={<Details />} />

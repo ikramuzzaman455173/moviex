@@ -4,7 +4,8 @@ import HeroBanner from './HeroBanner/HeroBanner'
 const HomePage = () => {
   return (
     <div className='homePage'>
-      <HeroBanner/>
+      <HeroBanner />
+      <div style={{height:1000}}></div>
     </div>
   )
 }
