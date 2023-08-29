@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { fetchDataFormApi } from './api'
 import { useSelector, useDispatch } from 'react-redux'
-import { getApiConfiguration } from './Store/HomeSlice';
+import { getApiConfiguration,getGenres } from './Store/HomeSlice';
 import HomePage from './Pages/HomePage/HomePage';
 import Details from './Pages/Details/Details';
 import SearchResult from './Pages/SearchResult/SearchResult';
@@ -16,6 +16,7 @@ const App = () => {
   console.log({ url: url?.total_pages });
   useEffect(() => {
     fetchApiConfig()
+    genresCall()
   }, [])
   const fetchApiConfig = () => {
     fetchDataFormApi("/configuration").then(result => {
@@ -30,6 +31,22 @@ const App = () => {
       console.log(`Error:`, error.message);
     })
   }
+
+  const genresCall =async () => {
+    let promises = []
+    let endpoints = ["tv", "movie"]
+    let allGenres = {}
+    endpoints.forEach((url) => {
+      return promises.push(fetchDataFormApi(`/genre/${url}/list`))
+    })
+    const data = await Promise.all(promises)
+    data?.map(({ genres }) => {
+      return genres?.map(item=>(allGenres[item.id]=item))
+    })
+    // console.log({ allGenres });
+    dispatch(getGenres(allGenres))
+  }
+
   return (
     <>
       <BrowserRouter>
