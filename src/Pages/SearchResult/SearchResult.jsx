@@ -54,8 +54,8 @@ const SearchResult = () => {
                 {`Search ${data.total_results>1?"results":"result"} of "${query}"`}
               </div>
               {/* <MovieCard/> */}
-              <InfiniteScroll next={fetchNextPageData} hasMore={pageNum<=data.total_pages} loader={<Spinner initial={true}/>} className='content' dataLength={data.results.length||[]}>
-                {data.results.map((item, i) => {
+              <InfiniteScroll next={fetchNextPageData} hasMore={pageNum<=data.total_pages} loader={<Spinner initial={true}/>} className='content' dataLength={data?.results?.length||[]}>
+                {data?.results?.map((item, i) => {
                   if (item.media_type === "person") return
                   return(<MovieCard key={i} data={item} fromSearch={true} />)
                 })}

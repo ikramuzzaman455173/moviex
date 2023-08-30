@@ -13,14 +13,14 @@ import Header from './Components/Header/Header';
 const App = () => {
   const dispatch = useDispatch()
   const { url } = useSelector(state => state.home)
-  console.log({ url: url?.total_pages });
+  // console.log({ url: url?.total_pages });
   useEffect(() => {
     fetchApiConfig()
     genresCall()
   }, [])
   const fetchApiConfig = () => {
     fetchDataFormApi("/configuration").then(result => {
-      console.log(result);
+      // console.log(result);
       const url = {
         backdrop: result.images.secure_base_url + "original",
         poster: result.images.secure_base_url + "original",
@@ -55,7 +55,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/:mediaType/:id" element={<Details />} />
           <Route path="/search/:query" element={<SearchResult />} />
-          <Route path="/expore/:mediaType" element={<Explore />} />
+          <Route path="/explore/:mediaType" element={<Explore />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>

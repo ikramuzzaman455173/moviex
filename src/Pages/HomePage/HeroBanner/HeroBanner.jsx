@@ -10,11 +10,11 @@ const HeroBanner = () => {
   const [query, setQuery] = useState("")
   const { data, loading } = useFetch("/movie/upcoming")
   const {url} = useSelector(state=>state.home)
-  console.log({ data });
+  // console.log({ data });
   {/* ====random background generate functionality add===== */ }
   useEffect(() => {
     const bg = url.backdrop+data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path
-    console.log({ bg });
+    // console.log({ bg });
     setBackground(bg)
     },[data])
   const searchQueryHandler = (event) => {
@@ -43,4 +43,3 @@ const HeroBanner = () => {
 }
 
 export default HeroBanner
-
