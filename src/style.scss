@@ -585,6 +585,7 @@ html {
     cursor: pointer;
     &::-webkit-scrollbar {
       height:7px;
+      width:5px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: var(--black-light);
@@ -1010,6 +1011,7 @@ html {
       cursor: pointer;
       &::-webkit-scrollbar {
         height:7px;
+        width:5px;
       }
       &::-webkit-scrollbar-thumb {
         background-color: var(--black-light);
@@ -1121,6 +1123,7 @@ html {
       cursor: pointer;
       &::-webkit-scrollbar {
         height:7px;
+        width:5px;
       }
       &::-webkit-scrollbar-thumb {
         background-color: var(--black-light);
