@@ -25,15 +25,15 @@ const Cast = ({ data, loading }) => {
             {!!data && <>
               {data.map(item => {
                 let imgUrl = item.profile_path ? url.profile + item.profile_path : avatar
-                return (<>
-                  <div className="listItem" key={item.id}>
+                return (<div key={item.id}>
+                  <div className="listItem">
                     <div className="profileImg">
                       <Img src={imgUrl} alt="profile img" />
                     </div>
                     <div className="name">{item.name}</div>
                     <div className="character">{item.character}</div>
                   </div>
-                </>)
+                </div>)
               })}
             </>}
           </div>

@@ -83,4 +83,3 @@ const Carousel = ({ data, loading,endpoint,title}) => {
 }
 
 export default Carousel
-

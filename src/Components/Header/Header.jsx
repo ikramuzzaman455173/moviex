@@ -48,14 +48,23 @@ const Header = () => {
     setShowSearch(false)
   }
 
+  // const searchQueryHandler = (event) => {
+  //   if (event.key == 'Enter' && query.length > 0) {
+  //     navigate(`/search/${query}`)
+  //   }
+  //   setTimeout(() => {
+  //     setShowSearch(false)
+  //   }, 1000);
+  // }
+
   const searchQueryHandler = (event) => {
-    if (event.key === 'Enter' && query.length > 0) {
-      navigate(`/search/${query}`)
+    if (event.key === "Enter" && query.length > 0) {
+        navigate(`/search/${query}`);
+        setTimeout(() => {
+            setShowSearch(false);
+        }, 1000);
     }
-    setTimeout(() => {
-      setShowSearch(false)
-    }, 1000);
-  }
+};
 
   const navigationHandler = (type) => {
     if (type == 'movie') {
