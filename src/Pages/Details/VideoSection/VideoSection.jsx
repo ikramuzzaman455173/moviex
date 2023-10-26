@@ -18,7 +18,10 @@ const VideosSection = ({ data, loading }) => {
   };
 
   return (
-    <div className="videosSection">
+    <>
+      {/* ====proper validation added===== */}
+      
+      {data===null||data.results.length===0?'':<div className="videosSection">
       <ContentWrapper>
         <div className="sectionHeading">Official Videos</div>
         {!loading ? (
@@ -53,7 +56,8 @@ const VideosSection = ({ data, loading }) => {
         videoId={videoId}
         setVideoId={setVideoId}
       />
-    </div>
+    </div>}
+    </>
   );
 };
 

@@ -11,15 +11,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  // --black: #04152d;
+  // --white: #ffffff;
+  // --black2: #041226;
+  // --black3: #020c1b;
+  // --black-lighter: #1c4b91;
+  // --black-light: #173d77;
+  // --pink: #da2f68;
+  // --orange: #f89e00;
+  // --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
   --black: #04152d;
   --white: #ffffff;
-  --black2: #041226;
-  --black3: #020c1b;
-  --black-lighter: #1c4b91;
-  --black-light: #173d77;
-  --pink: #da2f68;
-  --orange: #f89e00;
-  --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+  --black2:linear-gradient( 135deg, #080115 10%, #01081d 100%);
+  --black3: linear-gradient( 135deg, #020929 10%, #0f0027 100%);
+  --black-lighter: #021127;
+  --black-light:#173d77;
+  --pink: #eb4786;
+  --orange: #20f3f6;
+  --gradient: linear-gradient( 135deg, #FF6FD8 10%, #3813C2 100%);
 }
 
 * {
@@ -231,7 +240,7 @@ html {
     -webkit-backdrop-filter: blur(3.5px);
   }
   &.show {
-    background-color: var(--black3);
+    background: var(--black3);
   }
   &.hide {
     transform: translateY(-60px);
@@ -263,6 +272,7 @@ html {
       color: white;
       font-weight: 500;
       position: relative;
+      letter-spacing:1.2px;
       &.searchIcon {
         margin-right: 0;
       }
@@ -369,7 +379,7 @@ html {
 
 /***** Footer Section Styles *****/
 .footer {
-  background-color: var(--black3);
+  background: var(--black3);
   padding: 50px 0;
   color: white;
   position: relative;
@@ -812,7 +822,7 @@ html {
           }
           .circleRating {
               max-width: 70px;
-              background-color: var(--black2);
+              background: var(--black2);
               @include md {
                   max-width: 90px;
               }

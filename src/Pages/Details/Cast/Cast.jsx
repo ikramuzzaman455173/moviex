@@ -17,7 +17,8 @@ const Cast = ({ data, loading }) => {
     );
   };
   return (
-    <div className="castSection">
+    <>
+      {data===null||data?.length===0?'':<div className="castSection">
       <ContentWrapper>
         <div className="sectionHeading">Top Cast</div>
         {!loading ? (
@@ -48,7 +49,8 @@ const Cast = ({ data, loading }) => {
           </div>
         )}
       </ContentWrapper>
-    </div>
+    </div>}
+    </>
   );
 };
 
